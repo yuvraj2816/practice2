@@ -1,4 +1,210 @@
 hii 
 i live in banglore 
 before after
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git config --global user,name "vs-vb"
+error: key does not contain a section: user,name
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git config --global user.name "vs-vb"
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git config --global user.email vaibhava.23.becs@acharya.ac.in
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git init
+Initialized empty Git repository in C:/Users/HP/OneDrive/Desktop/cherry/.git/
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git commit -m"first"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git commit -m"first"
+[master (root-commit) c9ffb00] first
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git remote add origin https://github.com/vs-vb/yubraj.git
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 218 bytes | 218.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/vs-vb/yubraj.git
+ * [new branch]      master -> master
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git checkout -b source
+Switched to a new branch 'source'
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git commit -m"second"
+[source f9e83c0] second
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ vi file.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git commit -m"third"
+[source a616abd] third
+ 2 files changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git commit -m"fourth"
+[source 293e3e1] fourth
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git commit -m"fifth"
+[source 12a1193] fifth
+ 1 file changed, 1 insertion(+)
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (source)
+$ git checkout master
+Switched to branch 'master'
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git push origin source
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (13/13), 1.01 KiB | 257.00 KiB/s, done.
+Total 13 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'source' on GitHub by visiting:
+remote:      https://github.com/vs-vb/yubraj/pull/new/source
+remote:
+To https://github.com/vs-vb/yubraj.git
+ * [new branch]      source -> source
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git push origin master
+Everything up-to-date
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git cherry-pick a616abd7dd06c72020bd99a23cf6aad9d0387f30..12a1193e3d72475d6a88f8ced047a20b9aaad82f
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+error: could not apply 293e3e1... fourth
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master|CHERRY-PICKING)
+$ git add .
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master|CHERRY-PICKING)
+$ git cherry-pick --continue
+[master 3ae0ee8] '#'fourth
+ Date: Wed Jan 1 07:53:45 2025 +0530
+ 1 file changed, 6 insertions(+)
+Auto-merging file1.txt
+CONFLICT (content): Merge conflict in file1.txt
+error: could not apply 12a1193... fifth
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git cherry-pick --continue".
+hint: You can instead skip this commit with "git cherry-pick --skip".
+hint: To abort and get back to the state before "git cherry-pick",
+hint: run "git cherry-pick --abort".
+hint: Disable this message with "git config advice.mergeConflict false"
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master|CHERRY-PICKING)
+$ git add .
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master|CHERRY-PICKING)
+$ git cherry-pick --continue
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n) y
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n)
+Sorry, I did not understand your answer. Please type 'y' or 'n'
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n)
+Sorry, I did not understand your answer. Please type 'y' or 'n'
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n)
+Sorry, I did not understand your answer. Please type 'y' or 'n'
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n)
+Sorry, I did not understand your answer. Please type 'y' or 'n'
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n)
+Sorry, I did not understand your answer. Please type 'y' or 'n'
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n) n
+error: could not remove '.git/sequencer'
+[master 0b3c4fc] '#'fifth
+ Date: Wed Jan 1 07:54:08 2025 +0530
+ 1 file changed, 4 insertions(+)
+Deletion of directory '.git/sequencer' failed. Should I try again? (y/n) n
+error: could not remove '.git/sequencer'
+fatal: cherry-pick failed
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ vi file1.txt
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$ git push origin master
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 598 bytes | 299.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/vs-vb/yubraj.git
+   c9ffb00..0b3c4fc  master -> master
+
+HP@LAPTOP-CPBTOSAJ MINGW64 ~/OneDrive/Desktop/cherry (master)
+$
 
